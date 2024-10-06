@@ -1,0 +1,702 @@
+{
+	"id": 3,
+	"name": "kitchensink",
+	"description": "",
+	"bucket": {
+		"id": 15
+	},
+	"repository": {
+		"kind": "git",
+		"url": "https://github.com/tqvarnst/jboss-eap-quickstarts.git",
+		"branch": "7.1",
+		"tag": "",
+		"path": ""
+	},
+	"binary": "",
+	"review": null,
+	"comments": "",
+	"identities": [
+
+	],
+	"tags": [
+		{
+			"id": 16,
+			"name": "Java",
+			"source": "language-discovery"
+		},
+		{
+			"id": 48,
+			"name": "EJB XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 48,
+			"name": "EJB XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 98,
+			"name": "Servlet",
+			"source": "Analysis"
+		},
+		{
+			"id": 98,
+			"name": "Servlet",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 121,
+			"name": "CDI",
+			"source": "Analysis"
+		},
+		{
+			"id": 143,
+			"name": "Spring DI",
+			"source": "Analysis"
+		},
+		{
+			"id": 247,
+			"name": "ActiveMQ library",
+			"source": "Analysis"
+		},
+		{
+			"id": 247,
+			"name": "ActiveMQ library",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 260,
+			"name": "Mail",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 261,
+			"name": "Properties",
+			"source": "Analysis"
+		},
+		{
+			"id": 261,
+			"name": "Properties",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 265,
+			"name": "RMI",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 270,
+			"name": "JPA entities",
+			"source": "Analysis"
+		},
+		{
+			"id": 270,
+			"name": "JPA entities",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 271,
+			"name": "JPA named queries",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 272,
+			"name": "JPA XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 272,
+			"name": "JPA XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 273,
+			"name": "Persistence units",
+			"source": "Analysis"
+		},
+		{
+			"id": 273,
+			"name": "Persistence units",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 275,
+			"name": "EJB Timer",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 278,
+			"name": "Java EE Batch",
+			"source": "Analysis"
+		},
+		{
+			"id": 278,
+			"name": "Java EE Batch",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 280,
+			"name": "Java EE JSON-P",
+			"source": "Analysis"
+		},
+		{
+			"id": 280,
+			"name": "Java EE JSON-P",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 325,
+			"name": "Security Realm",
+			"source": "Analysis"
+		},
+		{
+			"id": 393,
+			"name": "Bean Validation",
+			"source": "Analysis"
+		},
+		{
+			"id": 393,
+			"name": "Bean Validation",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 400,
+			"name": "WSDL",
+			"source": "Analysis"
+		},
+		{
+			"id": 400,
+			"name": "WSDL",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 407,
+			"name": "Spring Web",
+			"source": "Analysis"
+		},
+		{
+			"id": 412,
+			"name": "JavaScript",
+			"source": "language-discovery"
+		},
+		{
+			"id": 415,
+			"name": "Quarkus",
+			"source": "language-discovery"
+		},
+		{
+			"id": 416,
+			"name": "Maven",
+			"source": "language-discovery"
+		},
+		{
+			"id": 423,
+			"name": "Application Properties File",
+			"source": "Analysis"
+		},
+		{
+			"id": 423,
+			"name": "Application Properties File",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 424,
+			"name": "JPA named queries",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 425,
+			"name": "Application Properties File",
+			"source": "Analysis"
+		},
+		{
+			"id": 425,
+			"name": "Application Properties File",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 426,
+			"name": "EJB XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 426,
+			"name": "EJB XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 427,
+			"name": "JPA named queries",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 428,
+			"name": "Apache License 2.0",
+			"source": "Analysis"
+		},
+		{
+			"id": 428,
+			"name": "Apache License 2.0",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 429,
+			"name": "RMI",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 430,
+			"name": "Properties",
+			"source": "Analysis"
+		},
+		{
+			"id": 430,
+			"name": "Properties",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 431,
+			"name": "Properties",
+			"source": "Analysis"
+		},
+		{
+			"id": 431,
+			"name": "Properties",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 432,
+			"name": "Application Properties File",
+			"source": "Analysis"
+		},
+		{
+			"id": 432,
+			"name": "Application Properties File",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 433,
+			"name": "CDI",
+			"source": "Analysis"
+		},
+		{
+			"id": 434,
+			"name": "CDI",
+			"source": "Analysis"
+		},
+		{
+			"id": 435,
+			"name": "EJB XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 435,
+			"name": "EJB XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 436,
+			"name": "RMI",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 437,
+			"name": "Persistence units",
+			"source": "Analysis"
+		},
+		{
+			"id": 437,
+			"name": "Persistence units",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 438,
+			"name": "Java EE JSON-P",
+			"source": "Analysis"
+		},
+		{
+			"id": 438,
+			"name": "Java EE JSON-P",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 439,
+			"name": "JPA XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 439,
+			"name": "JPA XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 441,
+			"name": "Java EE JSON-P",
+			"source": "Analysis"
+		},
+		{
+			"id": 441,
+			"name": "Java EE JSON-P",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 442,
+			"name": "JPA XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 442,
+			"name": "JPA XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 444,
+			"name": "JPA entities",
+			"source": "Analysis"
+		},
+		{
+			"id": 444,
+			"name": "JPA entities",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 445,
+			"name": "JPA entities",
+			"source": "Analysis"
+		},
+		{
+			"id": 445,
+			"name": "JPA entities",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 446,
+			"name": "Persistence units",
+			"source": "Analysis"
+		},
+		{
+			"id": 446,
+			"name": "Persistence units",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 447,
+			"name": "TSQL",
+			"source": "language-discovery"
+		},
+		{
+			"id": 448,
+			"name": "SQLPL",
+			"source": "language-discovery"
+		},
+		{
+			"id": 449,
+			"name": "PLpgSQL",
+			"source": "language-discovery"
+		},
+		{
+			"id": 450,
+			"name": "PLSQL",
+			"source": "language-discovery"
+		},
+		{
+			"id": 451,
+			"name": "WildFly",
+			"source": "language-discovery"
+		},
+		{
+			"id": 452,
+			"name": "Spring",
+			"source": "language-discovery"
+		},
+		{
+			"id": 453,
+			"name": "Spring Boot",
+			"source": "language-discovery"
+		},
+		{
+			"id": 454,
+			"name": "Servlet",
+			"source": "Analysis"
+		},
+		{
+			"id": 454,
+			"name": "Servlet",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 455,
+			"name": "Bean Validation",
+			"source": "Analysis"
+		},
+		{
+			"id": 455,
+			"name": "Bean Validation",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 456,
+			"name": "JSF XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 456,
+			"name": "JSF XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 457,
+			"name": "EJB Timer",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 458,
+			"name": "Java EE Batch",
+			"source": "Analysis"
+		},
+		{
+			"id": 458,
+			"name": "Java EE Batch",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 459,
+			"name": "Java EE Client XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 459,
+			"name": "Java EE Client XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 460,
+			"name": "Web Services Metadata",
+			"source": "Analysis"
+		},
+		{
+			"id": 460,
+			"name": "Web Services Metadata",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 461,
+			"name": "Mail",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 462,
+			"name": "JSF XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 462,
+			"name": "JSF XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 463,
+			"name": "EJB Timer",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 464,
+			"name": "Spring Deployable War",
+			"source": "Analysis"
+		},
+		{
+			"id": 464,
+			"name": "Spring Deployable War",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 465,
+			"name": "ActiveMQ library",
+			"source": "Analysis"
+		},
+		{
+			"id": 465,
+			"name": "ActiveMQ library",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 466,
+			"name": "Web Services Metadata",
+			"source": "Analysis"
+		},
+		{
+			"id": 466,
+			"name": "Web Services Metadata",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 467,
+			"name": "WSDL",
+			"source": "Analysis"
+		},
+		{
+			"id": 467,
+			"name": "WSDL",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 468,
+			"name": "Java EE Client XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 468,
+			"name": "Java EE Client XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 469,
+			"name": "Spring Deployable War",
+			"source": "Analysis"
+		},
+		{
+			"id": 469,
+			"name": "Spring Deployable War",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 470,
+			"name": "Servlet",
+			"source": "Analysis"
+		},
+		{
+			"id": 470,
+			"name": "Servlet",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 471,
+			"name": "Java EE Client XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 471,
+			"name": "Java EE Client XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 472,
+			"name": "Java EE Batch",
+			"source": "Analysis"
+		},
+		{
+			"id": 472,
+			"name": "Java EE Batch",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 473,
+			"name": "Mail",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 474,
+			"name": "Bean Validation",
+			"source": "Analysis"
+		},
+		{
+			"id": 474,
+			"name": "Bean Validation",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 475,
+			"name": "JSF XML",
+			"source": "Analysis"
+		},
+		{
+			"id": 475,
+			"name": "JSF XML",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 476,
+			"name": "WSDL",
+			"source": "Analysis"
+		},
+		{
+			"id": 476,
+			"name": "WSDL",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 477,
+			"name": "Spring Deployable War",
+			"source": "Analysis"
+		},
+		{
+			"id": 477,
+			"name": "Spring Deployable War",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 478,
+			"name": "Web Services Metadata",
+			"source": "Analysis"
+		},
+		{
+			"id": 478,
+			"name": "Web Services Metadata",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 479,
+			"name": "ActiveMQ library",
+			"source": "Analysis"
+		},
+		{
+			"id": 479,
+			"name": "ActiveMQ library",
+			"source": "tech-discovery"
+		},
+		{
+			"id": 480,
+			"name": "Security Realm",
+			"source": "Analysis"
+		},
+		{
+			"id": 481,
+			"name": "Security Realm",
+			"source": "Analysis"
+		},
+		{
+			"id": 482,
+			"name": "Spring DI",
+			"source": "Analysis"
+		},
+		{
+			"id": 483,
+			"name": "Spring Web",
+			"source": "Analysis"
+		},
+		{
+			"id": 484,
+			"name": "Spring DI",
+			"source": "Analysis"
+		},
+		{
+			"id": 485,
+			"name": "Spring Web",
+			"source": "Analysis"
+		}
+	],
+	"businessService": null,
+	"owner": null,
+	"contributors": [
+
+	],
+	"migrationWave": null,
+	"archetypes": null,
+	"assessments": [
+
+	],
+	"assessed": false,
+	"risk": "unassessed",
+	"confidence": 0,
+	"effort": 2217
+}
