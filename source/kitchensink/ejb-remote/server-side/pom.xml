@@ -20,12 +20,12 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>ejb-remote</artifactId>
-        <version>7.1.0.GA</version>
+        <version>7.4.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>ejb-remote-server-side</artifactId>
     <packaging>ejb</packaging>
-    <name>${qs.name.prefix} ejb-remote - server-side</name>
+    <name>Quickstart: ejb-remote - server-side</name>
     <description>This project demonstrates how to access an EJB from a remote client; this is the server side POM file</description>
 
     <licenses>
@@ -42,7 +42,7 @@
             as the API is included in JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
             <scope>provided</scope>
         </dependency>
 

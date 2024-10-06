@@ -22,11 +22,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>app-client</artifactId>
-        <version>7.1.0.GA</version>
+        <version>7.4.0.GA</version>
     </parent>
     <artifactId>app-client-client-simple</artifactId>
     <packaging>jar</packaging>
-    <name>${qs.name.prefix} app-client - client-simple</name>
+    <name>Quickstart: app-client - client-simple</name>
     <description>This project demonstrates how to package and use an EE application client; this is the client POM file</description>
     
     <licenses>
@@ -38,6 +38,12 @@
     </licenses>
 
     <dependencies>
+        <!-- The EJB Client BOM provides application server-compatible dependency management,
+        used for building, testing or debugging EJB client applications. Import the BOM to the
+        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
+        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
+        on all the artifacts it manages.
+        -->
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-ejb-client-bom</artifactId>
@@ -45,7 +51,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.eap.quickstarts</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>app-client-ejb</artifactId>
             <version>${project.version}</version>
         </dependency>

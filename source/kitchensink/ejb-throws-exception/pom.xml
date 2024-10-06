@@ -15,18 +15,21 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>quickstart-parent</artifactId>
-        <version>7.1.0.GA</version>
+        <!--
+        Maintain separation between the artifact id and the version to help prevent
+        merge conflicts between commits changing the GA and those changing the V.
+        -->
+        <version>7.4.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>ejb-throws-exception</artifactId>
     <packaging>pom</packaging>
-    <name>${qs.name.prefix} ejb-throws-exception</name>
+    <name>Quickstart: ejb-throws-exception</name>
     <description>This project demonstrates how to throw an exception in an EJB and catch it in the web layer</description>
 
     <licenses>
@@ -50,26 +53,26 @@
             <!-- Define the version of the EJB jar so that we don't need
                 to repeat ourselves in every module -->
             <dependency>
-                <groupId>org.jboss.eap.quickstarts</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>ejb-throws-exception-ejb</artifactId>
-                <version>${project.version}</version>
+                <version>7.4.0.GA</version>
                 <type>ejb</type>
             </dependency>
 
             <!-- Define the version of the ejb-api so that we don't need to
                 repeat ourselves in every module -->
             <dependency>
-                <groupId>org.jboss.eap.quickstarts</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>ejb-throws-exception-ejb-api</artifactId>
-                <version>${project.version}</version>
+                <version>7.4.0.GA</version>
             </dependency>
 
             <!-- Define the version of the WAR so that we don't need to repeat
                 ourselves in every module -->
             <dependency>
-                <groupId>org.jboss.eap.quickstarts</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>ejb-throws-exception-web</artifactId>
-                <version>${project.version}</version>
+                <version>7.4.0.GA</version>
                 <type>war</type>
                 <scope>compile</scope>
             </dependency>

@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>kitchensink-ear</artifactId>
-        <version>7.1.0.GA</version>
+        <version>7.4.0.GA</version>
     </parent>
     <artifactId>kitchensink-ear-ear</artifactId>
     <packaging>ear</packaging>
-    <name>${qs.name.prefix} kitchensink-ear - ear</name>
+    <name>Quickstart: kitchensink-ear - ear</name>
     <description>This kitchensink project demonstrates how to use JSF, CDI, JAX-RS, EJB, JPA, and Bean Validation in an application packaged as an EAR; this is the EAR POM file</description>
 
     <licenses>
@@ -38,14 +38,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.jboss.eap.quickstarts</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>kitchensink-ear-ejb</artifactId>
             <type>ejb</type>
         </dependency>
 
         <!-- Depend on the EJB module and WAR so that we can package them -->
         <dependency>
-            <groupId>org.jboss.eap.quickstarts</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>kitchensink-ear-web</artifactId>
             <type>war</type>
         </dependency>
@@ -58,9 +58,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
                 <configuration>
-                    <!-- Tell Maven we are using Java EE -->
+                    <!-- Tell Maven we are using Jakarta EE -->
                     <version>7</version>
-                    <!-- Use Java EE ear libraries as needed. Java EE ear libraries
+                    <!-- Use Jakarta EE ear libraries as needed. Jakarta EE ear libraries
                         are in easy way to package any libraries needed in the ear, and automatically
                         have any modules (EJB-JARs and WARs) use them -->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
@@ -70,13 +70,13 @@
                         register our War as a web module and set the contextRoot property -->
                         <!--
                     <webModule>
-                        <groupId>org.jboss.eap.quickstarts</groupId>
+                        <groupId>${project.groupId}</groupId>
                         <artifactId>kitchensink-ear-web</artifactId>
                         <contextRoot>/kitchensink-ear</contextRoot>
                     </webModule>
                     -->
                     </modules>
-                    <fileNameMapping>no-version</fileNameMapping>
+                    <outputFileNameMapping>@{artifactId}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
                 </configuration>
             </plugin>
             <!-- The WildFly plug-in deploys your ear to a local JBoss EAP container. 
