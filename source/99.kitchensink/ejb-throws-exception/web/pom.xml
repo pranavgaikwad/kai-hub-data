@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>ejb-throws-exception</artifactId>
-        <version>7.1.0.GA</version>
+        <version>7.4.0.GA</version>
     </parent>
     <artifactId>ejb-throws-exception-web</artifactId>
     <packaging>war</packaging>
-    <name>${qs.name.prefix} ejb-throws-exception - web</name>
+    <name>Quickstart: ejb-throws-exception - web</name>
     <description>This project demonstrates how to throw an exception in an EJB and catch it in the web layer; this is the web POM file</description>
 
     <licenses>
@@ -41,23 +41,23 @@
         <!-- Import the CDI API, we use provided scope as the API is included
             in JBoss EAP -->
         <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Import the JPA API, we use provided scope as the API is included
             in JBoss EAP -->
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Dependency on the EJB module so we can use it's services if
             needed -->
         <dependency>
-            <groupId>org.jboss.eap.quickstarts</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>ejb-throws-exception-ejb</artifactId>
             <type>ejb</type>
             <scope>provided</scope>
@@ -73,9 +73,8 @@
             in JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.ws.rs</groupId>
-            <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
+            <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>

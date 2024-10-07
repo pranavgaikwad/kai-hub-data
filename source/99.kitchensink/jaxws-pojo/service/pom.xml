@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>jaxws-pojo</artifactId>
-        <version>7.1.0.GA</version>
+        <version>7.4.0.GA</version>
     </parent>
     <artifactId>jaxws-pojo-service</artifactId>
     <packaging>war</packaging>
-    <name>${qs.name.prefix} jaxws-pojo - service</name>
+    <name>Quickstart: jaxws-pojo - service</name>
     <description>This project is a working example of a JAX-WS web service endpoint; this is the service POM file</description>
 
     <licenses>
@@ -35,7 +35,18 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.spec.javax.xml.ws</groupId>
+            <artifactId>jboss-jaxws-api_2.3_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.jws</groupId>
+            <artifactId>jsr181-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
     <build>
         <!-- Set the name for the deployable archive instead of using the default name with the version -->
         <finalName>${project.artifactId}</finalName>

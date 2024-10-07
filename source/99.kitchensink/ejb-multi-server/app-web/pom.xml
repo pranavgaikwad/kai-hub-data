@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>ejb-multi-server</artifactId>
-        <version>7.1.0.GA</version>
+        <version>7.4.0.GA</version>
     </parent>
     <artifactId>ejb-multi-server-app-web</artifactId>
     <packaging>war</packaging>
-    <name>${qs.name.prefix} ejb-multi-server - app-web</name>
+    <name>Quickstart: ejb-multi-server - app-web</name>
     <description>A project that demonstrates multiple applications deployed on different servers. 
         This is web application project, which contains a simple servlet to demonstrate 
         how a plain web application can use an EJB application deployed on a different server.</description>
@@ -62,7 +62,7 @@
         </dependency>
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
-            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -74,7 +74,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <!-- Java EE doesn't require web.xml, Maven needs to catch up! -->
+                    <!-- Jakarta EE doesn't require web.xml, Maven needs to catch up! -->
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>

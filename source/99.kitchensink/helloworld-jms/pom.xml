@@ -15,18 +15,21 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>quickstart-parent</artifactId>
-        <version>7.1.0.GA</version>
+        <!--
+        Maintain separation between the artifact id and the version to help prevent
+        merge conflicts between commits changing the GA and those changing the V.
+        -->
+        <version>7.4.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>helloworld-jms</artifactId>
     <packaging>jar</packaging>
-    <name>${qs.name.prefix} helloworld-jms</name>
+    <name>Quickstart: helloworld-jms</name>
     <description>A Helloworld JMS external producer/consumer client</description>
 
     <licenses>
@@ -38,6 +41,12 @@
     </licenses>
 
     <dependencies>
+        <!-- The JMS Client BOM provides application server-compatible dependency management,
+        used for building, testing or debugging JMS client applications. Import the BOM to the
+        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
+        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
+        on all the artifacts it manages.
+        -->
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-jms-client-bom</artifactId>

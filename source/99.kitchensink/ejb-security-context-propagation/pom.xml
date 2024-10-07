@@ -15,18 +15,21 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>quickstart-parent</artifactId>
-        <version>7.1.0.GA</version>
+        <!--
+        Maintain separation between the artifact id and the version to help prevent
+        merge conflicts between commits changing the GA and those changing the V.
+        -->
+        <version>7.4.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>ejb-security-context-propagation</artifactId>
     <packaging>ejb</packaging>
-    <name>${qs.name.prefix} ejb-security-context-propagation</name>
+    <name>Quickstart: ejb-security-context-propagation</name>
     <description>This project demonstrates the security context propagation between remote EJBs</description>
 
     <licenses>
@@ -45,8 +48,12 @@
     </properties>
 
     <dependencies>
-
-        <!-- Include the ejb client jars -->
+        <!-- The EJB Client BOM provides application server-compatible dependency management,
+        used for building, testing or debugging EJB client applications. Import the BOM to the
+        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
+        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
+        on all the artifacts it manages.
+        -->
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-ejb-client-bom</artifactId>
@@ -55,7 +62,7 @@
         </dependency>
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
         </dependency>
         <dependency>
             <groupId>org.jboss.ejb3</groupId>
@@ -93,7 +100,7 @@
                         <!-- automatically creates the classpath using all project dependencies,
                                       also adding the project build directory -->
                         <argument>-classpath</argument>
-                        <classpath></classpath>
+                        <classpath />
                         <argument>org.jboss.as.quickstarts.ejb_security_context_propagation.RemoteClient</argument>
                     </arguments>
                 </configuration>
