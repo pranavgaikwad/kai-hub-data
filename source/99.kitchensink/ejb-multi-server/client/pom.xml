@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>ejb-multi-server</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
     </parent>
     <artifactId>ejb-multi-server-client</artifactId>
     <packaging>jar</packaging>
-    <name>Quickstart: ejb-multi-server - client</name>
+    <name>${qs.name.prefix} ejb-multi-server - client</name>
     <description>A project that demonstrates multiple applications deployed on different servers. This is the client POM file</description>
 
     <licenses>
@@ -45,12 +45,7 @@
             <type>ejb-client</type>
         </dependency>
 
-        <!-- The EJB Client BOM provides application server-compatible dependency management,
-        used for building, testing or debugging EJB client applications. Import the BOM to the
-        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
-        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
-        on all the artifacts it manages.
-        -->
+        <!-- Include the ejb client jars -->
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-ejb-client-bom</artifactId>

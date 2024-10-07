@@ -2,10 +2,10 @@ package org.jboss.examples.ticketmonster.rest.dto;
 
 import java.io.Serializable;
 import org.jboss.examples.ticketmonster.model.SectionAllocation;
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import org.jboss.examples.ticketmonster.rest.dto.NestedPerformanceDTO;
 import org.jboss.examples.ticketmonster.rest.dto.NestedSectionDTO;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class SectionAllocationDTO implements Serializable

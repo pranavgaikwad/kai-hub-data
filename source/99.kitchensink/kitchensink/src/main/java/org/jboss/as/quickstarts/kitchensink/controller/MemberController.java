@@ -16,14 +16,13 @@
  */
 package org.jboss.as.quickstarts.kitchensink.controller;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.enterprise.inject.Model;
-import jakarta.enterprise.inject.Produces;
-import jakarta.faces.application.FacesMessage;
-import jakarta.faces.context.FacesContext;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.annotation.PostConstruct;
+import javax.enterprise.inject.Model;
+import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.jboss.as.quickstarts.kitchensink.model.Member;
 import org.jboss.as.quickstarts.kitchensink.service.MemberRegistration;
@@ -41,11 +40,9 @@ public class MemberController {
     @Inject
     private MemberRegistration memberRegistration;
 
+    @Produces
+    @Named
     private Member newMember;
-
-    public Member getNewMember() {
-        return newMember;
-    }
 
     @PostConstruct
     public void initNewMember() {

@@ -21,14 +21,14 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>inter-app</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>inter-app-appA</artifactId>
     <packaging>war</packaging>
 
-    <name>Quickstart: inter-app - appA</name>
+    <name>${qs.name.prefix} inter-app - appA</name>
     <description>This project demonstrates inter-application communication between two applications using EJB and CDI; this is the appA POM file</description>
 
     <licenses>
@@ -43,8 +43,8 @@
 
         <!-- Import the CDI API, we use provided scope as the API is included in JBoss EAP -->
         <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -52,7 +52,7 @@
             time. See the corresponding Dependencies entry in the MANIFEST.mf which defines
             the dependency at runtime. -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jboss.eap.quickstarts</groupId>
             <artifactId>inter-app-shared</artifactId>
             <type>ejb</type>
             <scope>provided</scope>
@@ -76,7 +76,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <!-- Jakarta EE doesn't require web.xml, Maven needs to
+                    <!-- Java EE doesn't require web.xml, Maven needs to
                         catch up! -->
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <!-- Define a dependency on the shared API, which will

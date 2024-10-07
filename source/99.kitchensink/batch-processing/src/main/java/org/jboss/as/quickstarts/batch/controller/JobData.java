@@ -70,7 +70,8 @@ public class JobData {
     }
 
     public Date getEndTime() {
-        return endTime;
+        endTime = new Date();
+        return endTime.getTime() == 0 ? null : endTime;
     }
 
     public BatchStatus getBatchStatus() {

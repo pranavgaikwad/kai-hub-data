@@ -28,8 +28,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import org.jboss.ejb3.annotation.SecurityDomain;
-
 import org.jboss.logging.Logger;
 
 /**
@@ -40,7 +38,6 @@ import org.jboss.logging.Logger;
  * @author <a href="mailto:wfink@redhat.com">Wolf-Dieter Fink</a>
  */
 @Stateless
-@SecurityDomain("other")
 public class MainAppBean implements MainApp {
     private static final Logger LOGGER = Logger.getLogger(MainAppBean.class);
     @Resource

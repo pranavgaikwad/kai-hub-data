@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>kitchensink-ear</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
     </parent>
     <artifactId>kitchensink-ear-ejb</artifactId>
     <packaging>ejb</packaging>
-    <name>Quickstart: kitchensink-ear - ejb</name>
+    <name>${qs.name.prefix} kitchensink-ear - ejb</name>
     <description>This kitchensink project demonstrates how to use JSF, CDI, JAX-RS, EJB, JPA, and Bean Validation in an application packaged as an EAR; this is the EJB POM file</description>
 
     <licenses>
@@ -40,8 +40,8 @@
 
         <!-- Import the CDI API, we use provided scope as the API is included in JBoss EAP -->
         <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -56,21 +56,15 @@
              Provides portable constraints such as @Email 
              Hibernate Validator is shipped in JBoss EAP -->
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
+            <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!-- hibernate-validator dependencies excluded on server dependency management yet required -->
-        <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Import the JPA API, we use provided scope as the API is included in JBoss EAP -->
         <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -98,15 +92,7 @@
             <artifactId>jboss-ejb-api_3.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.xml.bind</groupId>
-            <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

@@ -1,23 +1,32 @@
 package org.jboss.examples.ticketmonster.test.rest;
 
-import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
-import jakarta.ws.rs.core.MultivaluedHashMap;
-import jakarta.ws.rs.core.MultivaluedMap;
-import org.jboss.examples.ticketmonster.model.Venue;
-import org.jboss.examples.ticketmonster.rest.VenueService;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import javax.inject.Inject;
+import javax.ws.rs.core.MultivaluedHashMap;
+import javax.ws.rs.core.MultivaluedMap;
 
-@QuarkusTest
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.examples.ticketmonster.model.Venue;
+import org.jboss.examples.ticketmonster.rest.VenueService;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(Arquillian.class)
 public class VenueServiceTest {
-
+    
+    @Deployment
+    public static WebArchive deployment() {
+        return RESTDeployment.deployment();
+    }
+   
     @Inject
-    VenueService venueService;
+    private VenueService venueService;
     
     @Test
     public void testGetVenueById() {

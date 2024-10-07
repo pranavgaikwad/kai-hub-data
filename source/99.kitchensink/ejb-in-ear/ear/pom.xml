@@ -26,11 +26,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>ejb-in-ear</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
     </parent>
     <artifactId>ejb-in-ear-ear</artifactId>
     <packaging>ear</packaging>
-    <name>Quickstart: ejb-in-ear - ear</name>
+    <name>${qs.name.prefix} ejb-in-ear - ear</name>
     <description>This project demonstrates how to package an EJB and WAR in an EAR; this is the EAR POM file</description>
 
     <licenses>
@@ -43,13 +43,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jboss.eap.quickstarts</groupId>
             <artifactId>ejb-in-ear-ejb</artifactId>
             <type>ejb</type>
         </dependency>
         <!-- Dependencies on the EJB and Web modules so that they can be found by the EAR plug-in -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jboss.eap.quickstarts</groupId>
             <artifactId>ejb-in-ear-web</artifactId>
             <type>war</type>
         </dependency>
@@ -64,9 +64,9 @@
                 <artifactId>maven-ear-plugin</artifactId>
                 <!-- configuring the EAR plug-in -->
                 <configuration>
-                    <!-- Tell Maven we are using Jakarta EE -->
+                    <!-- Tell Maven we are using Java EE -->
                     <version>7</version>
-                    <!-- Use Jakarta EE ear libraries as needed. Jakarta EE ear libraries
+                    <!-- Use Java EE ear libraries as needed. Java EE ear libraries
                         are in easy way to package any libraries needed in the ear, and automatically
                         have any modules (EJB-JARs and WARs) use them -->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
@@ -75,12 +75,12 @@
                         If a custom context root is needed, uncomment the following snippet to
                         register our War as a web module and set the contextRoot property -->
                         <webModule>
-                            <groupId>${project.groupId}</groupId>
+                            <groupId>org.jboss.eap.quickstarts</groupId>
                             <artifactId>ejb-in-ear-web</artifactId>
                             <contextRoot>/ejb-in-ear</contextRoot>
                         </webModule>
                     </modules>
-                    <outputFileNameMapping>@{artifactId}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
+                    <fileNameMapping>no-version</fileNameMapping>
                 </configuration>
             </plugin>
             <!-- WildFly plug-in to deploy EAR -->

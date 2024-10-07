@@ -2,7 +2,7 @@ package org.jboss.examples.ticketmonster.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 /**
  * <p>

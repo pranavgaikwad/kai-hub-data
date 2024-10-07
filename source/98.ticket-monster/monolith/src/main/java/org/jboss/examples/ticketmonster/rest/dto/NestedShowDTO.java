@@ -2,8 +2,8 @@ package org.jboss.examples.ticketmonster.rest.dto;
 
 import java.io.Serializable;
 import org.jboss.examples.ticketmonster.model.Show;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.TypedQuery;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 public class NestedShowDTO implements Serializable
 {
@@ -40,7 +40,7 @@ public class NestedShowDTO implements Serializable
          {
             entity = findByIdQuery.getSingleResult();
          }
-         catch (jakarta.persistence.NoResultException nre)
+         catch (javax.persistence.NoResultException nre)
          {
             entity = null;
          }

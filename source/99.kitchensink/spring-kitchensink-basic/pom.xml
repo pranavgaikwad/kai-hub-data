@@ -15,23 +15,19 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>quickstart-parent</artifactId>
-        <!--
-        Maintain separation between the artifact id and the version to help prevent
-        merge conflicts between commits changing the GA and those changing the V.
-        -->
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
     <artifactId>spring-kitchensink-basic</artifactId>
     <packaging>war</packaging>
-    <name>Quickstart: spring-kitchensink-basic</name>
-    <description>Getting Started with Spring 5 on JBoss</description>
+    <name>${qs.name.prefix} spring-kitchensink-basic</name>
+    <description>Getting Started with Spring 4 on JBoss</description>
 
     <licenses>
         <license>
@@ -40,10 +36,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <properties>
-        <version.spring.framework>5.2.4.RELEASE</version.spring.framework>
-    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -96,35 +88,29 @@
              Provides portable constraints such as @Email 
              Hibernate Validator is shipped in JBoss EAP -->
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
+            <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!-- hibernate-validator dependencies excluded on server dependency management yet required -->
-        <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Annotation processor raises compilation errors whenever constraint
             annotations are incorrectly used. -->
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
+            <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator-annotation-processor</artifactId>
             <scope>provided</scope>
         </dependency>
         <!-- Import the JPA API using the provided scope It is included in JBoss EAP -->
         <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Bring in the Servlet jars to avoid errors while compiling with jdt. -->
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
-            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -136,12 +122,7 @@
         <!-- Add JTA API for tests -->
         <dependency>
             <groupId>org.jboss.spec.javax.transaction</groupId>
-            <artifactId>jboss-transaction-api_1.3_spec</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.xml.bind</groupId>
-            <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
+            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
             <scope>test</scope>
         </dependency>
 

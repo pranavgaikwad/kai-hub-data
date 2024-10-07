@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>ejb-asynchronous</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
     </parent>
     <artifactId>ejb-asynchronous-client</artifactId>
     <packaging>jar</packaging>
-    <name>Quickstart: ejb-asynchronous - client</name>
+    <name>${qs.name.prefix} ejb-asynchronous - client</name>
     <description>This project demonstrates asynchronous method invocations on an EJB; this is the Client POM file</description>
 
     <licenses>
@@ -37,12 +37,8 @@
     </licenses>
 
     <dependencies>
-        <!-- The EJB Client BOM provides application server-compatible dependency management,
-        used for building, testing or debugging EJB client applications. Import the BOM to the
-        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
-        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
-        on all the artifacts it manages.
-        -->
+
+        <!-- Include the ejb client jars -->
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-ejb-client-bom</artifactId>
@@ -52,7 +48,7 @@
 
         <!-- Import the client API of the EJB project -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jboss.eap.quickstarts</groupId>
             <artifactId>ejb-asynchronous-ejb</artifactId>
             <type>ejb-client</type>
         </dependency>
@@ -81,7 +77,7 @@
                         <!-- automatically creates the classpath using all
                             project dependencies, also adding the project build directory -->
                         <argument>-classpath</argument>
-                        <classpath />
+                        <classpath></classpath>
                         <argument>org.jboss.as.quickstarts.ejb.asynchronous.client.AsynchronousClient</argument>
                     </arguments>
                 </configuration>

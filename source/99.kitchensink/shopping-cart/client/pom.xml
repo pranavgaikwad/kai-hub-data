@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>shopping-cart</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
     </parent>
     <artifactId>shopping-cart-client</artifactId>
     <packaging>jar</packaging>
-    <name>Quickstart: shopping-cart - client</name>
+    <name>${qs.name.prefix} shopping-cart - client</name>
     <description>This project demonstrates a shopping cart that uses a Stateful Session Bean; this is the client POM file</description>
 
     <licenses>
@@ -37,12 +37,10 @@
     </licenses>
 
     <dependencies>
-        <!-- The EJB Client BOM provides application server-compatible dependency management,
-        used for building, testing or debugging EJB client applications. Import the BOM to the
-        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
-        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
-        on all the artifacts it manages.
-        -->
+
+        <!-- JBoss EJB client stack. We use runtime scope because the EJB
+            client API isn't directly used in this example. We just need it in our runtime
+            classpath -->
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-ejb-client-bom</artifactId>
@@ -52,7 +50,7 @@
 
         <!-- We depend on the server side EJBs of this application -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jboss.eap.quickstarts</groupId>
             <artifactId>shopping-cart-server</artifactId>
             <type>ejb</type>
         </dependency>

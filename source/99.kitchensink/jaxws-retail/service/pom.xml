@@ -21,12 +21,12 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>jaxws-retail</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>jaxws-retail-service</artifactId>
     <packaging>war</packaging>
-    <name>Quickstart: jaxws-retail - service</name>
+    <name>${qs.name.prefix} jaxws-retail - service</name>
     <description>This project is a working example of a JAX-WS web service retail endpoint; this is the service POM file</description>
 
     <licenses>
@@ -36,33 +36,24 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <properties>
-        <checkstyle.skip>true</checkstyle.skip>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.jboss.spec.javax.ejb</groupId>
             <artifactId>jboss-ejb-api_3.2_spec</artifactId>
-            <scope>provided</scope>
         </dependency>
-        <!-- The JAXWS Client BOM provides application server-compatible dependency management,
-        used for building, testing or debugging JAXWS client applications. Import the BOM to the
-        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
-        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
-        on all the artifacts it manages.
-        In the following example, the BOM is used to pull the correct dependencies for jaxws-tools-maven-plugin.
-        -->
+        <!-- used to pull correct dependencies for jaxws-tools-maven-plugin  -->
         <dependency>
-            <groupId>org.jboss.eap</groupId>
-            <artifactId>wildfly-jaxws-client-bom</artifactId>
+            <groupId>org.jboss.ws.cxf</groupId>
+            <artifactId>jbossws-cxf-client</artifactId>
             <scope>provided</scope>
-            <type>pom</type>
         </dependency>
     </dependencies>
 
     <build>
-     
+        <!-- Set the name of the archive -->
+        <finalName>${project.artifactId}</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -89,13 +80,12 @@
                     <wsdls>
                         <wsdl>${basedir}/src/main/webapp/WEB-INF/wsdl/ProfileMgmtService.wsdl</wsdl>
                     </wsdls>
-                    <fork>false</fork>
                     <extension>true</extension>
                     <verbose>false</verbose>
-                    <endpointClass />
+                    <endpointClass></endpointClass>
                     <!-- some JDK implementations forbid file access for external schema,
                          see http://docs.oracle.com/javase/8/docs/api/javax/xml/XMLConstants.html#ACCESS_EXTERNAL_SCHEMA -->
-                    <argLine>-Djavax.xml.accessExternalSchema=all -Dlog4j.configuration=file:${basedir}/src/main/resources/log4j.properties</argLine>
+                    <argLine>-Djavax.xml.accessExternalSchema=all</argLine>
                     <targetPackage>org.jboss.quickstarts.ws.jaxws.samples.retail.profile</targetPackage>
                 </configuration>
                 <executions>

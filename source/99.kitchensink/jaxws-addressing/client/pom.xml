@@ -21,12 +21,12 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>jaxws-addressing</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>jaxws-addressing-client</artifactId>
     <packaging>jar</packaging>
-    <name>Quickstart: jaxws-addressing - client</name>
+    <name>${qs.name.prefix} jaxws-addressing - client</name>
     <description>This project is a working example of a JAX-WS web service addressing endpoint; this is the client POM file</description>
 
     <licenses>
@@ -38,22 +38,13 @@
     </licenses>
 
     <dependencies>
+
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jboss.eap.quickstarts</groupId>
             <artifactId>jaxws-addressing-service</artifactId>
             <classifier>classes</classifier>
         </dependency>
-        <!-- The JAXWS Client BOM provides application server-compatible dependency management,
-        used for building, testing or debugging JAXWS client applications. Import the BOM to the
-        dependency management section of the app's pom.xml file and then set dependencies on specific artifacts.
-        Alternatively, as shown in the following example, set a single dependency on the BOM for the app to depend
-        on all the artifacts it manages.
-        -->
-        <dependency>
-            <groupId>org.jboss.eap</groupId>
-            <artifactId>wildfly-jaxws-client-bom</artifactId>
-            <type>pom</type>
-        </dependency>
+
     </dependencies>
 
     <build>
@@ -65,7 +56,6 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>org.jboss.quickstarts.ws.jaxws.samples.wsa.AddressingClient</mainClass>
-                    <classpathScope>compile</classpathScope>
                 </configuration>
             </plugin>
         </plugins>

@@ -2,11 +2,11 @@ package org.jboss.examples.ticketmonster.rest.dto;
 
 import java.io.Serializable;
 import org.jboss.examples.ticketmonster.model.TicketPrice;
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import org.jboss.examples.ticketmonster.rest.dto.NestedShowDTO;
 import org.jboss.examples.ticketmonster.rest.dto.NestedSectionDTO;
 import org.jboss.examples.ticketmonster.rest.dto.NestedTicketCategoryDTO;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class TicketPriceDTO implements Serializable

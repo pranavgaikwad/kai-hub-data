@@ -21,14 +21,14 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>inter-app</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>inter-app-shared</artifactId>
     <packaging>ejb</packaging>
 
-    <name>Quickstart: inter-app - shared</name>
+    <name>${qs.name.prefix} inter-app - shared</name>
     <description>This project demonstrates inter-application communication between two applications using EJB and CDI; this is the shared project POM file</description>
 
     <licenses>

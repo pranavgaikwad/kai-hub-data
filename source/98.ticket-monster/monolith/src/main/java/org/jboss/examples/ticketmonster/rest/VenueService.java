@@ -1,7 +1,8 @@
 package org.jboss.examples.ticketmonster.rest;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.ws.rs.Path;
+import javax.ejb.Stateless;
+import javax.ws.rs.Path;
+
 import org.jboss.examples.ticketmonster.model.Venue;
 
 /**
@@ -18,7 +19,7 @@ import org.jboss.examples.ticketmonster.model.Venue;
  *     This is a stateless service, we declare it as an EJB for transaction demarcation
  * </p>
  */
-@ApplicationScoped
+@Stateless
 public class VenueService extends BaseEntityService<Venue> {
 
     public VenueService() {

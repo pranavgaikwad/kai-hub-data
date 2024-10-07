@@ -26,11 +26,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>ejb-in-ear</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
     </parent>
     <artifactId>ejb-in-ear-web</artifactId>
     <packaging>war</packaging>
-    <name>Quickstart: ejb-in-ear - web</name>
+    <name>${qs.name.prefix} ejb-in-ear - web</name>
     <description>This project demonstrates how to package an EJB and WAR in an EAR; this is the WAR POM file</description>
 
     <licenses>
@@ -45,14 +45,14 @@
 
         <!-- Import the CDI API, we use provided scope as the API is included in JBoss EAP -->
         <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Import the ejb project so that the JSF managed bean can use the EJB -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jboss.eap.quickstarts</groupId>
             <artifactId>ejb-in-ear-ejb</artifactId>
             <type>ejb</type>
             <scope>provided</scope>
@@ -62,7 +62,7 @@
             as the API is included in JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
+            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
         <!-- Import the EJB API, we use provided scope as the API is included in
@@ -76,7 +76,7 @@
         <!-- Import the JSF API, we use provided scope as the API is included in JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.faces</groupId>
-            <artifactId>jboss-jsf-api_2.3_spec</artifactId>
+            <artifactId>jboss-jsf-api_2.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
 

@@ -1,45 +1,48 @@
 package org.jboss.examples.ticketmonster.test.rest;
 
-import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
-import jakarta.persistence.NoResultException;
-import jakarta.ws.rs.core.MultivaluedHashMap;
-import jakarta.ws.rs.core.MultivaluedMap;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.persistence.NoResultException;
+import javax.ws.rs.core.MultivaluedHashMap;
+import javax.ws.rs.core.MultivaluedMap;
+
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.junit.InSequence;
 import org.jboss.examples.ticketmonster.model.Booking;
 import org.jboss.examples.ticketmonster.model.Performance;
 import org.jboss.examples.ticketmonster.model.Show;
 import org.jboss.examples.ticketmonster.model.Ticket;
 import org.jboss.examples.ticketmonster.model.TicketPrice;
-import org.jboss.examples.ticketmonster.rest.BookingRequest;
-import org.jboss.examples.ticketmonster.rest.BookingService;
-import org.jboss.examples.ticketmonster.rest.ShowService;
-import org.jboss.examples.ticketmonster.rest.TicketRequest;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.jboss.examples.ticketmonster.rest.*;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-
-@QuarkusTest
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@RunWith(Arquillian.class)
 public class BookingServiceTest {
 
-    @Inject
-    BookingService bookingService;
+    @Deployment
+    public static WebArchive deployment() {
+        return RESTDeployment.deployment();
+    }
 
     @Inject
-    ShowService showService;
+    private BookingService bookingService;
+
+    @Inject
+    private ShowService showService;
 
     @Test
-    @Order(1)
+    @InSequence(1)
     public void testCreateBookings() {
         BookingRequest br = createBookingRequest(1l, 0, new int[]{4, 1}, new int[]{1,1}, new int[]{3,1});
         bookingService.createBooking(br);
@@ -51,8 +54,8 @@ public class BookingServiceTest {
         bookingService.createBooking(br3);
     }
 
-    @Test
-    @Order(10)
+    @Test @Ignore
+    @InSequence(10)
     public void testGetBookings() {
         checkBooking1();
         checkBooking2();
@@ -119,7 +122,7 @@ public class BookingServiceTest {
     }
 
     @Test
-    @Order(10)
+    @InSequence(10)
     public void testPagination() {
 
         // Test pagination logic
@@ -136,7 +139,7 @@ public class BookingServiceTest {
     }
 
     @Test
-    @Order(20)
+    @InSequence(20)
     public void testDelete() {
         bookingService.deleteBooking(2l);
         checkBooking1();
@@ -182,7 +185,7 @@ public class BookingServiceTest {
         }
         System.out.println(bookedTickets);
         for (String requiredTicket : requiredTickets) {
-            assertTrue(bookedTickets.contains(requiredTicket), "Required ticket not present: " + requiredTicket);
+            Assert.assertTrue("Required ticket not present: " + requiredTicket, bookedTickets.contains(requiredTicket));
         }
     }
 

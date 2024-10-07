@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
         <artifactId>jaxws-ejb</artifactId>
-        <version>7.4.0.GA</version>
+        <version>7.1.0.GA</version>
     </parent>
     <artifactId>jaxws-ejb-service</artifactId>
     <packaging>war</packaging>
-    <name>Quickstart: jaxws-ejb - service</name>
+    <name>${qs.name.prefix} jaxws-ejb - service</name>
     <description>This project is a working example of a JAX-WS web service EJB endpoint; this is the service POM file</description>
 
     <licenses>
@@ -38,6 +38,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.sun.istack</groupId>
+            <artifactId>istack-commons-runtime</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.jboss.ejb3</groupId>
             <artifactId>jboss-ejb3-ext-api</artifactId>
             <scope>provided</scope>
@@ -47,20 +52,12 @@
             <artifactId>jboss-ejb-api_3.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.xml.ws</groupId>
-            <artifactId>jboss-jaxws-api_2.3_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.jws</groupId>
-            <artifactId>jsr181-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
-    
+        <!-- Set the name of the archive instead of using the default name with the version -->
+        <finalName>${project.artifactId}</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -81,5 +78,6 @@
             </plugin>
 
         </plugins>
+        <sourceDirectory>src/main/java</sourceDirectory>
     </build>
 </project>

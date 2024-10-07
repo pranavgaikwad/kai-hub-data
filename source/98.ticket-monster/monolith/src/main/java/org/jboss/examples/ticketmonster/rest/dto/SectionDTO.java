@@ -2,9 +2,9 @@ package org.jboss.examples.ticketmonster.rest.dto;
 
 import java.io.Serializable;
 import org.jboss.examples.ticketmonster.model.Section;
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import org.jboss.examples.ticketmonster.rest.dto.NestedVenueDTO;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class SectionDTO implements Serializable

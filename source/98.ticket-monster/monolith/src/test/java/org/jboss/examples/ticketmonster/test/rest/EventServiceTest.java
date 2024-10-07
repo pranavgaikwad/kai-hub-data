@@ -1,35 +1,43 @@
 package org.jboss.examples.ticketmonster.test.rest;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
-import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
-import jakarta.ws.rs.core.MultivaluedHashMap;
-import jakarta.ws.rs.core.MultivaluedMap;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.ws.rs.core.MultivaluedHashMap;
+import javax.ws.rs.core.MultivaluedMap;
+
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.examples.ticketmonster.model.Event;
 import org.jboss.examples.ticketmonster.model.MediaType;
 import org.jboss.examples.ticketmonster.rest.EventService;
 import org.jboss.examples.ticketmonster.rest.MediaService;
 import org.jboss.examples.ticketmonster.service.MediaManager;
 import org.jboss.examples.ticketmonster.service.MediaPath;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-@QuarkusTest
+@RunWith(Arquillian.class)
 public class EventServiceTest {
     
+    @Deployment
+    public static WebArchive deployment() {
+        return RESTDeployment.deployment();
+    }
+   
     @Inject
-    EventService eventService;
+    private EventService eventService;
     
     @Inject
-    MediaService mediaService;
+    private MediaService mediaService;
     
     @Inject
-    MediaManager mediaManager;
+    private MediaManager mediaManager;
     
     @Test
     public void testGetEventById() {
@@ -42,7 +50,8 @@ public class EventServiceTest {
     }
     
     @Test
-    @Disabled("todo fix this test; for some reason the media URLs are no longer available; need to repopulate")
+    @Ignore
+    // todo fix this test; for some reason the media URLs are no longer available; need to repopulate
     public void testGetEventMedia() {
         
         // Test loading a single event

@@ -127,7 +127,7 @@ public class ResteasySpringIT {
                 }
             }
             {
-                HttpGet method = new HttpGet(url.toString() + "uriParam/1234");
+                HttpGet method = new HttpGet("http://localhost:8080/spring-resteasy/uriParam/1234");
                 try (CloseableHttpResponse response = client.execute(method)) {
                     Assert.assertEquals(HttpResponseCodes.SC_OK, response.getStatusLine().getStatusCode());
                     Assert.assertTrue(EntityUtils.toString(response.getEntity()).equals("1234"));
@@ -144,9 +144,8 @@ public class ResteasySpringIT {
             {
                 URI uri = new URIBuilder()
                         .setScheme("http")
-                        .setHost(url.getHost())
-                        .setPort(url.getPort())
-                        .setPath(url.getPath() + "locating/hello")
+                        .setHost("localhost:8080")
+                        .setPath("/spring-resteasy/locating/hello")
                         .setParameter("name", "JBoss Developer")
                         .build();
                 HttpGet method = new HttpGet(uri);
@@ -158,7 +157,7 @@ public class ResteasySpringIT {
                 }
             }
             {
-                HttpGet method = new HttpGet(url.toString() + "locating/basic");
+                HttpGet method = new HttpGet("http://localhost:8080/spring-resteasy/locating/basic");
                 try (CloseableHttpResponse response = client.execute(method)) {
                     Assert.assertEquals(HttpResponseCodes.SC_OK, response.getStatusLine().getStatusCode());
                     Assert.assertTrue(EntityUtils.toString(response.getEntity()).contains("basic"));
@@ -167,7 +166,7 @@ public class ResteasySpringIT {
                 }
             }
             {
-                HttpPut method = new HttpPut(url.toString() + "locating/basic");
+                HttpPut method = new HttpPut("http://localhost:8080/spring-resteasy/locating/basic");
                 method.setEntity(new StringEntity("basic", ContentType.TEXT_PLAIN));
                 try (CloseableHttpResponse response = client.execute(method)) {
                     Assert.assertEquals(HttpResponseCodes.SC_NO_CONTENT, response.getStatusLine().getStatusCode());
@@ -178,9 +177,8 @@ public class ResteasySpringIT {
             {
                 URI uri = new URIBuilder()
                         .setScheme("http")
-                        .setHost(url.getHost())
-                        .setPort(url.getPort())
-                        .setPath(url.getPath() + "locating/queryParam")
+                        .setHost("localhost:8080")
+                        .setPath("/spring-resteasy/locating/queryParam")
                         .setParameter("param", "hello world")
                         .build();
                 HttpGet method = new HttpGet(uri);
@@ -192,7 +190,7 @@ public class ResteasySpringIT {
                 }
             }
             {
-                HttpGet method = new HttpGet(url.toString() + "locating/matrixParam;param=matrix");
+                HttpGet method = new HttpGet("http://localhost:8080/spring-resteasy/locating/matrixParam;param=matrix");
                 try (CloseableHttpResponse response = client.execute(method)) {
                     Assert.assertEquals(HttpResponseCodes.SC_OK, response.getStatusLine().getStatusCode());
                     Assert.assertTrue(EntityUtils.toString(response.getEntity()).equals("matrix"));
@@ -201,7 +199,7 @@ public class ResteasySpringIT {
                 }
             }
             {
-                HttpGet method = new HttpGet(url.toString() + "locating/uriParam/1234");
+                HttpGet method = new HttpGet("http://localhost:8080/spring-resteasy/locating/uriParam/1234");
                 try (CloseableHttpResponse response = client.execute(method)) {
                     Assert.assertEquals(HttpResponseCodes.SC_OK, response.getStatusLine().getStatusCode());
                     Assert.assertTrue(EntityUtils.toString(response.getEntity()).equals("1234"));
